@@ -1,0 +1,310 @@
+:root {
+  --bg: #0a0a0c;
+  --panel: #141419;
+  --line: #26262e;
+  --ink: #f2f2f5;
+  --muted: #8b8b98;
+  --accent: #7dd3fc;
+  --good: #86efac;
+  --bad: #fca5a5;
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  line-height: 1.5;
+}
+
+a {
+  color: inherit;
+}
+
+.shell {
+  max-width: 62rem;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 5rem;
+}
+
+.masthead {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin-bottom: 0.35rem;
+}
+
+.masthead h1 {
+  font-size: 1.6rem;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.masthead span {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.tagline {
+  color: var(--muted);
+  margin: 0 0 2.25rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  transition: border-color 120ms ease;
+}
+
+.card:hover {
+  border-color: #3a3a46;
+}
+
+.card figure {
+  margin: 0;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  position: relative;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.badge {
+  position: absolute;
+  left: 0.5rem;
+  bottom: 0.5rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.45rem;
+  border-radius: 0.3rem;
+  background: rgb(0 0 0 / 0.66);
+  color: var(--accent);
+  backdrop-filter: blur(4px);
+}
+
+.card .body {
+  padding: 0.85rem 0.9rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  flex: 1;
+}
+
+.card h2 {
+  font-size: 1rem;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+  flex: 1;
+}
+
+.price {
+  font-variant-numeric: tabular-nums;
+  font-size: 0.9rem;
+}
+
+/* The explicit "Watch" affordance; the whole card is no longer a link. */
+.card .watch {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.4rem 0.7rem;
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+  background: #1c1c22;
+  color: inherit;
+  text-decoration: none;
+  font-size: 0.85rem;
+  text-align: center;
+  transition: border-color 120ms ease, background 120ms ease;
+}
+
+.card .watch:hover {
+  border-color: #3a3a46;
+  background: #23232b;
+}
+
+.price b {
+  font-weight: 600;
+}
+
+.price span {
+  color: var(--muted);
+}
+
+.player {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.back {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.back:hover {
+  color: var(--ink);
+}
+
+.screen {
+  background: #000;
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  display: grid;
+  place-items: center;
+}
+
+.screen canvas,
+.screen img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.screen .placeholder {
+  color: var(--muted);
+  font-size: 0.9rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  padding: 1rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.panel h1 {
+  font-size: 1.15rem;
+  margin: 0;
+}
+
+.panel .meta {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+button {
+  font: inherit;
+  font-size: 0.9rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: 0.4rem;
+  border: 1px solid var(--line);
+  background: #1c1c23;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+button:hover:not(:disabled) {
+  border-color: #45454f;
+}
+
+button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+button.primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #06202e;
+  font-weight: 600;
+}
+
+.mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.8rem;
+  color: var(--muted);
+  word-break: break-all;
+}
+
+/* Shown beside the address so the current state of the ladder is visible while
+   debugging connection problems. */
+.mono .phase {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* Deliberately not inside .steps: disconnect is not a step forward, it is the
+   way out of whatever step the viewer is on. */
+.disconnect {
+  margin: 0.6rem 0 0;
+  background: transparent;
+  border: 1px solid var(--muted);
+  color: var(--muted);
+  font-size: 0.75rem;
+  padding: 0.3rem 0.7rem;
+  cursor: pointer;
+}
+
+.disconnect:hover:not(:disabled) {
+  color: var(--ink);
+  border-color: var(--ink);
+}
+
+.disconnect:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.status {
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.status.ok {
+  color: var(--good);
+}
+
+.status.err {
+  color: var(--bad);
+}
+
+.status.idle {
+  color: var(--muted);
+}

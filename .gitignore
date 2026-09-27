@@ -1,0 +1,27 @@
+node_modules/
+.next/
+out/
+build/
+dist/
+
+# sqlite database (regenerate with `npm run seed`)
+data/*.db*
+data/**/*.db*
+data/backups/
+
+# generated frame images (regenerate with `npm run seed`)
+data/reels/
+
+# secrets
+.env
+.env.local
+.env.*.local
+
+# misc
+*.tsbuildinfo
+next-env.d.ts
+.vscode/
+.DS_Store
+*.log
+npm-debug.log*
+coverage/
